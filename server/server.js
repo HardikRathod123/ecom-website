@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 //   ?  Required APIs
 const api = require('./routes')
-app.use("/api",api)
+app.use(api)
 
 
 app.post("/", (req, res) => {

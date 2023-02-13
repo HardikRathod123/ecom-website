@@ -1,9 +1,8 @@
 const app = require('express')();
 
-app.use("/", require('./routes/product'));
-app.use("/", require('./routes/category'));
-app.use("/", require('./routes/owner'));
-app.use("/", require("./routes/auth"));
-app.use("/", require("./routes/review"));
+app.use("/api", require('./routes/product'));
+app.use("/api", require('./routes/category'));
+app.use("/api", require('./routes/owner'));
+
 
 module.exports = app;

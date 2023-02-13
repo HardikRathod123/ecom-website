@@ -13,14 +13,13 @@ router.post("/products", upload.single("photo"), async (req, res) => {
     product.photo = req.file.location;
     product.stockQuantity = req.body.stockQuantity;
     product.price = req.body.price;
-    product.owner = req.body.ownerID;
-    product.category = req.body.categoryID;
-
+    product.ownerID = req.body.ownerID;
+    product.categoryID = req.body.categoryID;
+    
     await product.save();
     res.json({
       status: true,
       message: "Successfully added Product",
-      product: product,
     });
   } catch (err) {
     res.status(500).json({
@@ -34,7 +33,7 @@ router.post("/products", upload.single("photo"), async (req, res) => {
 
 router.get("/products", async (req, res) => {
   try {
-    let products = await Product.find().populate('owner category').exec();
+    let products = await Product.find();
     res.json({
       success: true,
       products: products,
@@ -51,7 +50,7 @@ router.get("/products", async (req, res) => {
 
 router.get("/products/:id", async (req, res) => {
   try {
-    let product = await Product.findOne({ _id: req.params.id }).populate('owner category').exec();
+    let product = await Product.findOne({ _id: req.params.id });
     res.json({
       success: true,
       product: product,
