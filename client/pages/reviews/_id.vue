@@ -28,9 +28,9 @@
               <h2 class="a-spacing-base">Overall Rating</h2>
               <div class="a-row">
                 <!-- //   ?   Rating -->
-                <no-ssr>
+                <client-only>
                   <star-rating v-model="rating"></star-rating>
-                </no-ssr>
+                </client-only>
               </div>
               <div class="a-row a-spacing-top-large">
                 <h2>Add photo or video</h2>

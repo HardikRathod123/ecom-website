@@ -150,7 +150,7 @@
                                 <star-rating
                                   :rating="product.averageRating"
                                   :show-rating="false"
-                                  v-bind:increment="0.5"
+                                  v-bind:increment="0.1"
                                   :glow="1"
                                   :border-width="1"
                                   :rounded-corners="true"
@@ -182,9 +182,9 @@
 
 <script>
 import FeaturedProduct from "../components/FeaturedProduct.vue";
-
+import StarRating from "vue-star-rating";
 export default {
-  components: { FeaturedProduct },
+  components: { FeaturedProduct , StarRating},
 
   async asyncData({ $axios }) {
     try {

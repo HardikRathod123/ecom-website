@@ -103,6 +103,18 @@
               </div>
 
               <div class="reviewGroup">
+                <client-only>
+                  <star-rating
+                    :rating="product.averageRating"
+                    :show-rating="false"
+                    v-bind:increment="0.1"
+                    :glow="1"
+                    :border-width="1"
+                    :rounded-corners="true"
+                    :read-only="true"
+                    :star-size="18"
+                  ></star-rating>
+                </client-only>
                 <hr style="margin-top: 10px" />
                 <!-- //   ?   a tags Dummy Data -->
                 <div class="mediaMatrix">
@@ -385,19 +397,32 @@
             </div>
           </div>
         </div>
+
+        <ReviewSection :product="product" :reviews="reviews" />
       </div>
     </div>
   </main>
 </template>
 
 <script>
+import ReviewSection from "../../components/ReviewSection.vue";
+import StarRating from "vue-star-rating";
+
 export default {
+  components: { ReviewSection, StarRating },
   async asyncData({ $axios, params }) {
     try {
-      let responseProduct = await $axios.$get(`/api/products/${params.id}`);
+      let responseSingleProduct = $axios.$get(`/api/products/${params.id}`);
+      let manyReviews = $axios.$get(`/api/reviews/${params.id}`);
       //console.log(singleProduct);
+      const [productResponse, reviewResponse] = await Promise.all([
+        responseSingleProduct,
+        manyReviews,
+      ]);
+      // console.log(reviewResponse.reviews);
       return {
-        product: responseProduct.product,
+        product: productResponse.product,
+        reviews: reviewResponse.reviews,
       };
     } catch (err) {
       console.log(err);

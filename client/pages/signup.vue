@@ -30,7 +30,7 @@
                   <label for="ap_customer_name" class="a-form-lable">Email</label>
                   <input
                     type="email"
-                    id="ap_customer_name"
+                    id="ap_customer_email"
                     class="a-input-text form-control auth-control auth-required-field auth-contact-verification-request-info"
                     v-model="email"
                   />
@@ -41,7 +41,7 @@
                   <label for="ap_customer_name" class="a-form-lable">Password</label>
                   <input
                     type="password"
-                    id="ap_customer_name"
+                    id="ap_customer_password"
                     class="a-input-text form-control auth-autofocus auth-required-field auth-contact-verification-request-info"
                     v-model="password"
                   />

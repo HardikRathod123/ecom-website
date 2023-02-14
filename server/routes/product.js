@@ -13,9 +13,9 @@ router.post("/products", upload.single("photo"), async (req, res) => {
     product.photo = req.file.location;
     product.stockQuantity = req.body.stockQuantity;
     product.price = req.body.price;
-    product.ownerID = req.body.ownerID;
-    product.categoryID = req.body.categoryID;
-    
+    product.owner = req.body.ownerID;
+    product.category = req.body.categoryID;
+
     await product.save();
     res.json({
       status: true,
@@ -33,7 +33,10 @@ router.post("/products", upload.single("photo"), async (req, res) => {
 
 router.get("/products", async (req, res) => {
   try {
-    let products = await Product.find();
+    let products = await Product.find()
+      .populate("owner category")
+      .populate("reviews", "rating")
+      .exec();
     res.json({
       success: true,
       products: products,
@@ -50,7 +53,10 @@ router.get("/products", async (req, res) => {
 
 router.get("/products/:id", async (req, res) => {
   try {
-    let product = await Product.findOne({ _id: req.params.id });
+    let product = await Product.findOne({ _id: req.params.id })
+      .populate("owner category")
+      .populate("reviews", "rating")
+      .exec();
     res.json({
       success: true,
       product: product,
@@ -119,4 +125,5 @@ router.delete("/products/:id", async (req, res) => {
     });
   }
 });
+
 module.exports = router;

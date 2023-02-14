@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-const cors = require('cors');
+const cors = require("cors");
 
 const User = require("./models/user");
 
@@ -27,9 +27,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 //   ?  Required APIs
-const api = require('./routes')
-app.use(api)
-
+const api = require("./routes");
+app.use("/api", api);
 
 app.post("/", (req, res) => {
   let user = new User();
