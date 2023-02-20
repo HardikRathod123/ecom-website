@@ -2829,7 +2829,7 @@ a.action-button:visited .action-inner {
     display: none !important;
   }
 }
-span.icp-container-desktop {
+div.icp-container-desktop {
     vertical-align: top;
     margin: 18px auto 0;
     margin-left: 70px;
@@ -2894,9 +2894,8 @@ div.navFooterLine {
     color: #CCC;
 }
 .nav-arrow.icp-up-down-arrow {
-    background: url(https://m.media-amazon.com/images/G/01/AUIClients/InternationalCustomerPref…ncesNavAssets-icp_sprite-7d1bfde…._V2_.png);
     width: 12px;
-    height: 12px;
+    height: 12px;KW
     background-position: -77px -80px;
     position: relative;
     left: 12px;

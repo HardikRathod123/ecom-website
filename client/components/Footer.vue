@@ -123,7 +123,7 @@
               </div>
             </div>
             <div class="col-md-8 col-sm-12">
-              <span class="icp-container-desktop">
+              <div class="icp-container-desktop">
                 <div class="navFooterLine">
                   <a href="#" class="icp-button">
                     <div class="icp-nav-globe-img-2 icp-button-globe-2 icp-nav-globe-curr-fix">​</div>
@@ -139,7 +139,7 @@
                     <span class="icp-color-base">United States</span>
                   </a>
                 </div>
-              </span>
+              </div>
             </div>
           </div>
         </div>
