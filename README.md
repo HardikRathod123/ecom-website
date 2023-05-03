@@ -60,3 +60,7 @@ Contributions are welcome! Please open a pull request and describe the changes y
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Stripe Integration 
+TBD
+
