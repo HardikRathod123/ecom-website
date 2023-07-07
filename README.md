@@ -21,11 +21,8 @@ An ecommerce website built using Vue.js, Node.js, MongoDB, AWS, Algolia, Nuxt, S
 4. Open a web browser and navigate to `http://localhost:3000`
 
 ## Deployment
-The application is deployed to AWS using the following steps:
 
-1. Build the production-ready application
-
-2. Deploy to AWS
+TBD
 
 ## Configuration
 The following environment variables must be set before starting the application:
